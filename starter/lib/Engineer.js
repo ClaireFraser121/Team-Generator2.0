@@ -7,7 +7,18 @@ class Manager extends Employee {
         super(name, id, email);
 
         // Additional property specific to Manager
+    if (this.validateGitHub(github)) {
         this.github = github;
+    } else {
+        throw new Error('Invalid GitHub username. Please provide a valid username');
+    }
+}
+
+    //Method to validate the GitHud username
+    validateGitHub(github) {
+        // Implement your validation logic here
+        // For example, check if GitHub username is alphanumeric 
+        return /^[a-zA-Z0-9]+$/.test(github);
     }
 
     // Method to get the Manager's office number
