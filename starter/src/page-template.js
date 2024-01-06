@@ -4,7 +4,7 @@ const generateTeam = team => {
     // creates the manager html
     const generateManager = manager => {
         return `
-        <div class="card m-2 employee-card shadow">
+        <div class="card mb-3 employee-card shadow">
         <div class="card-header" style="background-color: orange; color: white;">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2" style="color: rgb(117, 114, 114);"></i>Manager</h3>
@@ -12,7 +12,7 @@ const generateTeam = team => {
         <div class="card-body" style="background-color: #ffebcc; color: rgb(95, 92, 92);">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}" class="text-dark">${manager.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
                 <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
@@ -24,7 +24,7 @@ const generateTeam = team => {
     // creates the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div class="card m-2 employee-card shadow">
+        <div class="card mb-3 employee-card shadow">
         <div class="card-header" style="background-color: green; color: white;">
             <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2" style="color: rgb(77, 74, 74);"></i>Engineer</h3>
@@ -32,8 +32,8 @@ const generateTeam = team => {
         <div class="card-body" style="background-color: #b3ffb3; color: rgb(95, 92, 92);">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${engineer.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}" class="text-dark">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer" class="text-dark">${engineer.getGithub()}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
             </ul>
         </div>
     </div>
@@ -44,7 +44,7 @@ const generateTeam = team => {
     // creates the html for interns
     const generateIntern = intern => {
         return `
-        <div class="card m-2 employee-card shadow">
+        <div class="card mb-3 employee-card shadow">
         <div class="card-header" style="background-color: teal; color: white;">
             <h2 class="card-title">${intern.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-user-graduate mr-2" style="color: rgb(57, 55, 55);;"></i>Intern</h3>
@@ -52,7 +52,7 @@ const generateTeam = team => {
         <div class="card-body" style="background-color: #99e6e6; color: rgb(95, 92, 92);">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${intern.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}" class="text-dark">${intern.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
                 <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
@@ -60,27 +60,24 @@ const generateTeam = team => {
         `;
     };
 
-
     const html = [];
 
-    html.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
+    html.push(
+        team.filter(employee => employee.getRole() === "Manager").map(manager => generateManager(manager)).join("")
     );
-    html.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
-        .join("")
+    html.push(
+        team.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineer(engineer)).join("")
     );
-    html.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
-        .join("")
+    html.push(
+        team.filter(employee => employee.getRole() === "Intern").map(intern => generateIntern(intern)).join("")
     );
 
-    return html.join("");
-
-}
+    return `
+        <div class="card-columns">
+            ${html.join("")}
+        </div>
+    `;
+};
 
 // exports function to generate entire page
 module.exports = team => {
@@ -91,7 +88,7 @@ module.exports = team => {
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My Team</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -106,14 +103,14 @@ module.exports = team => {
             <h1 class="text-center display-4 font-weight-bold">My Team</h1>
         </div>
     </div>
-</div>
-<div class="container-fluid p-4">
-    <div class="row">
-        <div class="team-area col-12 d-flex justify-content-center">
-            ${generateTeam(team)}
+    </div>
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                ${generateTeam(team)}
+            </div>
         </div>
     </div>
-</div>
 
 
     <!-- Bootstrap JS and Popper.js -->

@@ -1,0 +1,52 @@
+/* Default styles for employee cards */
+/* .employee-card {
+    background-color: #3498db;
+    color: white;
+} */
+
+/* Responsive styles for employee cards */
+@media (max-width: 576px), (min-width: 577px) and (max-width: 768px) { 
+    .col-12,
+    .col-md-6,
+    .col-lg-4 {
+        background-color: #ffffff;
+        color: #333333;
+        max-width: 100%;
+        /* padding-right: 0;
+        padding-left: 0; */
+    }
+} 
+
+
+/* Additional styling for the My Team title and jumbotron */
+/* .team-heading,
+.jumbotron {
+    background-color: #b3bcf5;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} */
+
+/* Default styles for card headers */
+/* .employee-card .card-header {
+    background-color: #3498db;
+    color: white;
+} */
+
+/* Default styles for card bodies */
+/* .employee-card .card-body {
+    background-color: #ecf0f1;
+    color: #333;
+} */
+
+/* Additional styling for the jumbotron */
+/* .jumbotron {
+    background-color: #b3bcf5;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} */
+
+/* Remove unwanted horizontal stripes on each side of the cards */
+/* body {
+    margin: 0; /* Remove default body margin */
+    /* padding: 0; /* Remove default body padding 
+} */ 
