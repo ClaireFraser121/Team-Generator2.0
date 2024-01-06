@@ -15,8 +15,7 @@ class Engineer extends Employee {
 
   // Method to validate the GitHub username
   validateGitHub(github) {
-    // Implement your validation logic here
-    // For example, check if GitHub username is alphanumeric
+    // Implement of validation logic 
     return /^[a-zA-Z0-9]+$/.test(github);
   }
 

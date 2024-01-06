@@ -15,8 +15,7 @@ class Intern extends Employee {
 
   // Method to validate the school name
   validateSchool(school) {
-    // Implement your validation logic here
-    // For example, check if school name is non-empty
+    
     return school.trim() !== '';
   }
 
