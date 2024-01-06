@@ -35,7 +35,7 @@ To install Team Generator 2.0, follow these steps:
 3. Choose 'Finish building the team' when done.
 4. Find the generated HTML file in the 'output' folder.
 
-![Team Generator Screenshot](assets/images/screenshot.png)
+![Team Generator Screenshot](/assets/My-Team%20(1).png)
 
 ## Credits
 
