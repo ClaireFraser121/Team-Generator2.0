@@ -1,0 +1,15 @@
+{
+  "name": "team-generator2.0",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
