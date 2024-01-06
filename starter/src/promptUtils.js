@@ -40,6 +40,26 @@ const createManager = async () => {
             type: 'input',
             name: 'officeNumber',
             message: "Enter the manager's office number:",
+            validate: function (officeNumber) {
+                // Define regex patterns for different phone number formats
+                const mobilePattern = /^[0-9]{11}$/; // Assuming a 11-digit mobile number
+                const landlinePattern = /^[0-9]{7,}$/; // Assuming at least 7 digits for a landline
+                const internalPattern = /^internal-[0-9]+$/i; // Assuming an internal number like 'internal-123'
+                const internationalPattern = /^\+[0-9]+$/; // Assuming an international number starting with '+'
+    
+                // Check if the entered number matches any of the patterns
+                if (mobilePattern.test(officeNumber)) {
+                    return true; // Valid mobile number
+                } else if (landlinePattern.test(officeNumber)) {
+                    return true; // Valid landline number
+                } else if (internalPattern.test(officeNumber)) {
+                    return true; // Valid internal number
+                } else if (internationalPattern.test(officeNumber)) {
+                    return true; // Valid international number
+                } else {
+                    return "Please enter a valid phone number (mobile, landline, internal, or international).";
+                }
+            },
         },
     ];
 
