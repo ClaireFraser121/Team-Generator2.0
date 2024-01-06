@@ -19,7 +19,6 @@ While developing Team Generator 2.0, I gained experience in working with Node.js
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Website Demo](#website-demo)
 
 ## Installation
 
@@ -47,9 +46,6 @@ To install Team Generator 2.0, follow these steps:
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Website Demo
-
-Check out the [Team Generator 2.0 Demo](#) to see how the application works in action.
 
 ## Badges
 
