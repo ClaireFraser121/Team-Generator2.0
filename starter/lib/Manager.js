@@ -18,9 +18,13 @@ class Manager extends Employee {
 
     // Method to validate the office number
     validateOfficeNumber(officeNumber) {
-        // Implement your validation logic here
-        // For example, check if officeNumber is a non-negative integer
-        return Number.isInteger(officeNumber) && officeNumber >= 0;
+      if (typeof officeNumber === 'number' && Number.isInteger(officeNumber) && officeNumber >= 0 ) {
+        return true;
+      } else if (typeof officeNumber === 'string' && officeNumber.trim() !== '') {
+        return true
+      } else {
+        return false;
+      }
     }
 
     // Method to get the Manager's office number
