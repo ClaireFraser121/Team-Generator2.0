@@ -1,9 +1,9 @@
 // Generic function to prompt for information
 
 const inquirer = require("inquirer");
-const Manager = require("../lib/Manager");
-const Engineer = require("../lib/Engineer");
-const Intern = require("../lib/Intern");
+const Manager = require("../src/lib/Manager");
+const Engineer = require("../src/lib/Engineer");
+const Intern = require("../src/lib/Intern");
 
 const promptForInformation = async (questions) => {
     const answers = await inquirer.prompt(questions);

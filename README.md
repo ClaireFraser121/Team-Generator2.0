@@ -30,10 +30,13 @@ To install Team Generator 2.0, follow these steps:
 
 ## Usage
 
-1. Run the command `node index.js` in the 'starter' directory.
-2. Answer the prompts to input information about managers, engineers, and interns.
-3. Choose 'Finish building the team' when done.
-4. Find the generated HTML file in the 'output' folder.
+1. Navigate to the 'src' directory: `cd src`.
+2. Run the command `node index.js`.
+3. Follow the prompts to input information about managers, engineers, and interns.
+4. Choose 'Finish building the team' when you have added all team members.
+5. Find the generated HTML file in the 'output' folder.
+
+The generated HTML file, named `team.html`, will be located in the 'output' directory.
 
 ![Team Generator Screenshot](/assets/My-Team%20(1).png)
 

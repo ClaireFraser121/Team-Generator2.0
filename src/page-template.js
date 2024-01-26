@@ -94,8 +94,10 @@ module.exports = team => {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="page-template.js"></script>
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
-</head>
+
+    </head>
 
 <div class="container-fluid my-team-background p-4">
     <div class="row">
